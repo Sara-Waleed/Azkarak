@@ -39,14 +39,7 @@ class _HomeState extends State<Home> {
         },
         'text': ' اذكار المساء ',
       },
-      {
-        'image': 'assets/images/pray.png',
-        'onTap': ()  {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => Doaa(),));
-        },
-        'text': 'دعاء',
-      },
+
 
       {
         'image': 'assets/images/sleep.png',
@@ -55,6 +48,14 @@ class _HomeState extends State<Home> {
               MaterialPageRoute(builder: (context) => SleepAzkar(),));
         },
         'text': 'اذكار النوم ',
+      },
+      {
+        'image': 'assets/images/pray.png',
+        'onTap': ()  {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => Doaa(),));
+        },
+        'text': 'دعاء',
       },
       {
         'image': 'assets/images/tasbih.png',
@@ -107,7 +108,7 @@ class HomeBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey.shade400,
+        backgroundColor: Colors.blue.shade300,
         title: Text("اذكارك"),
         centerTitle: true,
         automaticallyImplyLeading: false,

@@ -20,14 +20,13 @@ class MorningScreen extends StatelessWidget {
       countertime: 2,
     ),
     ComponentAzkar(
-      Textquran:     "بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم         \n            { قُلْ هُوَ ٱللَّهُ أَحَدٌ، ٱللَّهُ ٱلصَّمَدُ، لَمْ يَلِدْ وَلَمْ يُولَدْ، وَلَمْ يَكُن لَّهُۥ كُفُوًا "
-          "أَحَد }.",
+      Textquran:     "بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم  \n { قُلْ هُوَ ٱللَّهُ أَحَدٌ، ٱللَّهُ ٱلصَّمَدُ، لَمْ يَلِدْ وَلَمْ يُولَدْ، وَلَمْ يَكُن لَّهُۥ كُفُوًا ""أَحَد }.",
       Textcount: '( ثلاث مرات )',
       counterName: 0,
       countertime:4,
     ),
     ComponentAzkar(
-      Textquran:                       "بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم     \n                 { قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ، مِن شَرِّ مَا خَلَقَ، وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ، وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ، وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ }."   ,
+      Textquran: "بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم \n{ قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ، مِن شَرِّ مَا خَلَقَ، وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ، وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ، وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ }."   ,
       Textcount: '( ثلاث مرات )',
       counterName: 0,
       countertime:4,
@@ -176,8 +175,9 @@ class MorningScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.green,
-      title: Text("Morning Reminders"),
+      appBar: AppBar(backgroundColor: Colors.blue.shade300,
+      title: Text("اذكار الصباح"),
+        centerTitle: true,
       ),
       body: Container(
         decoration: BoxDecoration(

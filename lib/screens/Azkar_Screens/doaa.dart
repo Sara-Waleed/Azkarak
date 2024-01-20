@@ -34,8 +34,8 @@ class Doaa extends StatelessWidget {
     ];
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey.shade400,
-        title: Text('Doaa List'),
+        backgroundColor: Colors.blue.shade300,
+        title: Text('دعاء'),
         centerTitle: true,
       ),
       body: Stack(

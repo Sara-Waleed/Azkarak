@@ -1,18 +1,18 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../models/ItemAzkar.dart';
+import '../models/tasbeehItem.dart';
 
-class AzkarContainer extends StatefulWidget {
-  final ComponentAzkar componentAzkar;
+class AzkarCont extends StatefulWidget {
+  final ComponentTasbeeh componentTasbeeh;
 
-  AzkarContainer({required this.componentAzkar});
+  AzkarCont({required this.componentTasbeeh});
 
   @override
   _AzkarContainerState createState() => _AzkarContainerState();
 }
-class _AzkarContainerState extends State<AzkarContainer> {
+
+class _AzkarContainerState extends State<AzkarCont> {
   double progressValue = 0.0;
   int pressCount = 0;
 
@@ -31,12 +31,9 @@ class _AzkarContainerState extends State<AzkarContainer> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Center(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                ' ${widget.componentAzkar.Textquran}',
-                style: TextStyle(fontSize: 16),
-              ),
+            child: Text(
+              ' ${widget.componentTasbeeh.tasbeehText}',
+              style: TextStyle(fontSize: 16),
             ),
           ),
           SizedBox(height: 16),
@@ -48,18 +45,18 @@ class _AzkarContainerState extends State<AzkarContainer> {
                   style: ElevatedButton.styleFrom(
                     shape: CircleBorder(),
                     padding: EdgeInsets.all(24), // Adjust the padding to increase button size
-                    primary: Colors.blue.shade300,
+                    primary:Colors.blue.shade300,
                   ),
                   onPressed: () {
                     setState(() {
                       pressCount++;
 
-                      // Check if pressCount exceeds countertime
-                      if (pressCount >= widget.componentAzkar.countertime) {
+                      // Check if pressCount exceeds tasbeehCount
+                      if (pressCount >= widget.componentTasbeeh.tasbeehCount) {
                         pressCount = 0; // Reset the count
                         progressValue = 0.0; // Reset the progress
                       } else {
-                        progressValue = pressCount / widget.componentAzkar.countertime;
+                        progressValue = pressCount / widget.componentTasbeeh.tasbeehCount;
                       }
                     });
                   },
@@ -67,7 +64,7 @@ class _AzkarContainerState extends State<AzkarContainer> {
                     alignment: Alignment.center,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 8.0,right: 8,top: 5,bottom: 5),
+                        padding: const EdgeInsets.only(right: 10.0,left: 10,top: 10,bottom: 10),
                         child: Text(
                           '$pressCount', // Update the text based on pressCount
                           style: TextStyle(fontSize: 16),
@@ -85,7 +82,6 @@ class _AzkarContainerState extends State<AzkarContainer> {
                   ),
                 ),
               ),
-
             ],
           ),
         ],

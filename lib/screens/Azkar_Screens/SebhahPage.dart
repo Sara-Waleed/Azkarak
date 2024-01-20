@@ -8,13 +8,14 @@ class SebhahPage extends StatefulWidget {
 }
 
 class _SebhahPageState extends State<SebhahPage> {
-  int count = 1;
+  int count = 0;
+  double progressValue = 0.0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey.shade400,
+        backgroundColor: Colors.blue.shade300,
         title: Text("السبحة الالكترونية"),
         automaticallyImplyLeading: false,
         centerTitle: true,
@@ -34,12 +35,13 @@ class _SebhahPageState extends State<SebhahPage> {
                       height: 150,
                       width: 150,
                       decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black),
                         color: Colors.grey,
                         borderRadius: BorderRadius.circular(75),
                       ),
                     ),
                     CircularProgressIndicator(
-                      value: 0.5, // Set the initial value as needed
+                      value: progressValue,
                       strokeWidth: 10,
                       backgroundColor: Colors.grey,
                       valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
@@ -48,6 +50,7 @@ class _SebhahPageState extends State<SebhahPage> {
                       onTap: () {
                         setState(() {
                           count++;
+                          progressValue = count / 100.0; // Update progress based on count
                         });
                       },
                       borderRadius: BorderRadius.circular(75),
@@ -78,13 +81,20 @@ class _SebhahPageState extends State<SebhahPage> {
                   height: 50,
                   width: 50,
                   decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black),
                     color: Colors.grey,
                     borderRadius: BorderRadius.circular(25),
                   ),
                   child: Center(
                     child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.repeat_rounded),
+                      onPressed: () {
+                        setState(() {
+                          // Reset the count and progress
+                          count = 1;
+                          progressValue = 0.0;
+                        });
+                      },
+                      icon: Icon(Icons.repeat_rounded,),
                     ),
                   ),
                 ),
@@ -96,3 +106,4 @@ class _SebhahPageState extends State<SebhahPage> {
     );
   }
 }
+
